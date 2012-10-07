@@ -109,7 +109,7 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(PROJECT_ROOT, '../templates'),
-#    '/home/jantonio/Documentos/Cursos/MasterSoftwareLibre/july14_django/Exercise/MSWL_Django/Places_env/Place/templates',
+
 )
 
 INSTALLED_APPS = (
@@ -123,6 +123,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
+    'Place_app',
 )
 
 # A sample logging configuration. The only tangible logging

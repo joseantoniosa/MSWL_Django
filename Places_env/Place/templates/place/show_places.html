@@ -3,10 +3,9 @@
 {% block content %}
 <h3>This will be some main content</h3>
 {% for post in posts %}
-<h4>{{ post.place }} on {{ post.date|date:"B d, Y"|upper }}<h4>
-<p>{{ post.content }}</p>
+    <h4>{{ post.place }} on {{ post.date|date:"B d, Y"|upper }}<h4>
+    <p>{{ post.content }}</p>
 {% endfor %}
-
 
 
 
