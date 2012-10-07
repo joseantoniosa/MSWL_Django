@@ -108,8 +108,8 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(PROJECT_ROOT, 'templates'),
-    '/home/jantonio/Documentos/Cursos/MasterSoftwareLibre/july14_django/Exercise/MSWL_Django/Places_env/Place',
+#    os.path.join(PROJECT_ROOT, 'templates'),
+    '/home/jantonio/Documentos/Cursos/MasterSoftwareLibre/july14_django/Exercise/MSWL_Django/Places_env/Place/templates',
 )
 
 INSTALLED_APPS = (
