@@ -26,9 +26,15 @@ def view(request):
     return render_to_response('place/show_places.html' )
 
 
+
+def views(request):    
+    return render_to_response('/home/jantonio/Documentos/Cursos/MasterSoftwareLibre/july14_django/Exercise/MSWL_Django/Places_env/Place/templates/base.html') # 'place/show_places.html' )
+
 def view_latest_posts(request):
 # Last 5 days
     date = datetime.datetime.now() - datetime.timedelta(5)
     posts = Place.objects.filter(date__gte = date).order_by('-date')
     return render_to_response('place/show_places.html',{'place': place})
-
+#    
+#- - list the places by: 1) descending date; 2) number of views
+#- - view a place (viewing a place increments its number of views)
