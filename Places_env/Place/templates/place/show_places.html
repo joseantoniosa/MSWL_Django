@@ -2,19 +2,14 @@
 {% block title %}Homepage{% endblock %}
 {% block content %}
 
-
 {% if list_posts %}
 <h2>List of places by date : </h2>
     <ul>
-    
     {% for post in list_posts %}
         <li><a href="/place/{{ post.id }}/">{{ post.name }}</a> added : {{ post.date }} </li>
     {% endfor %}
-
     </ul>
 {% endif %}
-
-
 
 {% if list_places_views %}
 <h2>List of places by views : </h2>
@@ -26,19 +21,21 @@
 
 {% endif %}
 
-{% if detail_place %}
+{% if detail_place %} 
     <h1>Detail </h1>
-    ({{ detail_place.name }})
-    ({{ detail_place.description }})
-    ({{ detail_place.nr_views }})
-
+    <table border="0">
+    <tr>
+        <th> Name  </th>     <td>  {{ detail_place.name }}  </td>
+    </tr>
+    <tr>
+        <th>Description: </th><td>   {{ detail_place.description }}  </td> </tr>
+     <tr><th>Nr. of views: </th><td>  {{ detail_place.nr_views }}  </td> </tr>
+     <tr><th>URL: </th><td> <a href="{{ detail_place.url}}" target="_blank" >{{ detail_place.url }}</a> </td> </tr>
+     <tr><th>Date: </th> <td> {{ detail_place.date }}</td>    </tr>
+    </table>
 {% endif %}
+<br/>
 <div>
 <a href="/">Main Page</a>
 </div>
-
-
-
-
 {% endblock %}
-
