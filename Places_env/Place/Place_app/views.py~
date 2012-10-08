@@ -29,7 +29,7 @@ def view(request):
 # It show receive Id 
 def detail(request, place_id):
     date = datetime.datetime.now()
-    detail_place = Place.objects.filter(id=place_id)
+    detail_place = Place.objects.get(id=place_id) # TODO: howto filter by id
     return render_to_response('place/show_places.html', {'detail_place': detail_place } )
 
 
