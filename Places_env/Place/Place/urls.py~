@@ -4,10 +4,10 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('Place_app.views',
-    url(r'^$', 'view'),
-    url(r'^list/$', 'list_date'),  # List places descending date 
+    url(r'^$', 'index'),
+    url(r'^list_date/$', 'list_date'),  # List places descending date 
     url(r'^list_view/$', 'list_nr_views'),  # List places by number of views
-    url(r'^place/(?P<r_id>d+)/$', 'list_date'),
+    url(r'^place/(<id>)/$', 'detail'),
 #    url(r'^place/(?P<r_id>d+)/$', 'list_date'),
 
     ## url(r'^place/(?P<r_id>d+)/$', 'list_date'),

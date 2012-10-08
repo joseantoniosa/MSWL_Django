@@ -12,24 +12,28 @@
     {% endfor %}
 
     </ul>
-{% else %}
-    <p>No post are available.</p>
 {% endif %}
 
 
 
 {% if list_places_views %}
 <h2>List of places by views : </h2>
-    <ul>
-    
+    <ul>    
     {% for post in list_places_views %}
-        <li><a href="/place/{{ post.id }}/">{{ post.name }}</a> added : {{ post.date }} </li>
+        <li><a href="/place/{{ post.id }}/">{{ post.name }}</a> number of views : {{ post.nr_views }} </li>
     {% endfor %}
-
     </ul>
-{% else %}
-    <p>No post are available.</p>
+
 {% endif %}
+
+{% if detail_place %}
+    <h1>Detail </h1>
+    ({{ detail_place.name }})
+
+{% endif %}
+<div>
+<a href="/">Main Page</a>
+</div>
 
 
 

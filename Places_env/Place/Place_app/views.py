@@ -26,11 +26,11 @@ def view(request):
     return render_to_response('place/show_places.html', {'list_places_views': list_places_views} )
 
 # Detail Window
-def detail(request):
+# It show receive Id 
+def detail(request, place_id):
     date = datetime.datetime.now()
-    detail_place = Place.objects.filter(date__gte = date).order_by('-date')
-    return render_to_response('place/show_places.html', {'detail_place': detail_place} )
-
+    detail_place = Place.objects.filter(id=place_id) # TODO: howto filter
+    return render_to_response('place/show_places.html', {'detail_place': detail_place } )
 
 
 def create(request):
@@ -40,7 +40,7 @@ def create(request):
 
 
 def index(request):
-    return render_to_response('place/show_places.html' )
+    return render_to_response('place/main.html' )
 
 def view_latest_places(request):
 # Last 5 days
