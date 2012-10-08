@@ -25,6 +25,9 @@ Additional info:
 
 -  https://docs.djangoproject.com/en/dev/intro/tutorial01/ 
   -- python manage.py shell
-  --  python manage.py sql polls
- python manage.py validate 
- 
+     from Place_app.models import Place
+     p = Place(name="ciudad", description="City description", nr_views=1, url="http://www.terra.es")
+         
+  -- python manage.py sql polls
+     python manage.py validate 
+
