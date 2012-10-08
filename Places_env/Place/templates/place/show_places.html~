@@ -1,13 +1,37 @@
 {% extends "base.html" %}
 {% block title %}Homepage{% endblock %}
 {% block content %}
-<h3>This will be some main content</h3>
-{% for post in posts %}
-    <h4>{{ post.place }} on {{ post.date|date:"B d, Y"|upper }}<h4>
-    <p>{{ post.content }}</p>
-{% endfor %}
 
-{% url place.place_app.views.view_latest_posts () %}
+
+{% if list_posts %}
+<h2>List of places by date : </h2>
+    <ul>
+    
+    {% for post in list_posts %}
+        <li><a href="/place/{{ post.id }}/">{{ post.name }}</a> added : {{ post.date }} </li>
+    {% endfor %}
+
+    </ul>
+{% else %}
+    <p>No post are available.</p>
+{% endif %}
+
+
+
+{% if list_places_views %}
+<h2>List of places by views : </h2>
+    <ul>
+    
+    {% for post in list_places_views %}
+        <li><a href="/place/{{ post.id }}/">{{ post.name }}</a> added : {{ post.date }} </li>
+    {% endfor %}
+
+    </ul>
+{% else %}
+    <p>No post are available.</p>
+{% endif %}
+
+
 
 
 {% endblock %}

@@ -4,14 +4,21 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('Place_app.views',
-    url(r'^$', 'views'),
+    url(r'^$', 'view'),
+    url(r'^list/$', 'list_date'),  # List places descending date 
+    url(r'^list_view/$', 'list_nr_views'),  # List places by number of views
     url(r'^place/(?P<r_id>d+)/$', 'list_date'),
+#    url(r'^place/(?P<r_id>d+)/$', 'list_date'),
+
     ## url(r'^place/(?P<r_id>d+)/$', 'list_date'),
     url(r'^create/$', 'create'),
-    url(r'^admin/', include(admin.site.urls)),
     #url(r'^view/post/(?P<p_id>d+)/$','view', name = 'list_date'),
 )
 
+
+urlpatterns += patterns('',
+    url(r'^admin/', include(admin.site.urls)),
+)
 #urlpatterns = patterns('',
 #    # Examples:
 #    # url(r'^$', 'Places.views.home', name='home'),
@@ -23,3 +30,7 @@ urlpatterns = patterns('Place_app.views',
 #    # Uncomment the next line to enable the admin:
 #    # url(r'^admin/', include(admin.site.urls)),
 #)
+
+#    
+#- - list the places by: 1) descending date; 2) number of views
+#- - view a place (viewing a place increments its number of views)

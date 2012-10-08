@@ -7,4 +7,6 @@ class Place(models.Model):
     nr_views = models.IntegerField()
     url = models.URLField( max_length=200 )
 
+    def __unicode__(self):
+        return self.name
 
